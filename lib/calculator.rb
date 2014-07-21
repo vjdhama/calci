@@ -1,5 +1,7 @@
 class Calculator
-
+	
+	attr_accessor :result
+	
 	def initialize
 		@result = 0
 	end
@@ -19,4 +21,14 @@ class Calculator
 	def divide(param)
 		@result /= param
 	end
+
+	def cancel
+		@result = 0
+	end
 end
+
+class CommandProcessor
+	
+end
+
+cmd = CommandProcessor.new

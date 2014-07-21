@@ -23,4 +23,10 @@ describe "Calculator" do
 		calculator = Calculator.new
 		expect(calculator.divide 2).to eq 0
 	end
+
+	it "will make result zero on cancel" do
+		calculator = Calculator.new
+		calculator.cancel
+		expect(calculator.result).to eq 0
+	end
 end
