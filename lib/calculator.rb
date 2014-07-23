@@ -3,7 +3,7 @@ class Calculator
 	attr_accessor :result
 	
 	def initialize
-		@result = 0
+		@result = 0.0
 	end
 
 	def add(param)
@@ -23,7 +23,7 @@ class Calculator
 	end
 
 	def cancel
-		@result = 0
+		@result = 0.0
 	end
 end
 
@@ -45,16 +45,16 @@ class CommandProcessor
 			if operation.eql? 'exit'
 				exit
 			elsif operation.eql? 'add'
-				calculator.add(param.to_i)
+				calculator.add(param.to_f)
 				puts calculator.result
 			elsif operation.eql? 'subtract'
-				calculator.subtract(param.to_i)
+				calculator.subtract(param.to_f)
 				puts calculator.result
 			elsif operation.eql? 'multiply'
-				calculator.multiply(param.to_i)
+				calculator.multiply(param.to_f)
 				puts calculator.result
 			elsif operation.eql? 'divide'
-				calculator.divide(param.to_i)
+				calculator.divide(param.to_f)
 				puts calculator.result
 			elsif operation.eql? 'cancel'
 				calculator.cancel

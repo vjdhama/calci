@@ -5,28 +5,32 @@ describe "Calculator" do
 
 	it "will add a number" do
 		calculator = Calculator.new
-		expect(calculator.add 2).to eq 2
+		expect(calculator.add 2).to eq 2.0
+		expect(calculator.add 2.0).to eq 4.0
 	end
 	
 	it "will subtract a number" do
 		calculator = Calculator.new
-		expect(calculator.subtract 2).to eq -2
+		expect(calculator.subtract 2).to eq -2.0
+		expect(calculator.subtract 2.0).to eq -4.0
 	end
 
 	it "will multiply a number" do
 		calculator = Calculator.new
-		expect(calculator.multiply 2).to eq 0
+		expect(calculator.multiply 2).to eq 0.0
+		expect(calculator.multiply 2.0).to eq 0.0
 	end
 
 	it "will divide a number" do
 		calculator = Calculator.new
-		expect(calculator.divide 2).to eq 0
+		expect(calculator.divide 2).to eq 0.0
+		expect(calculator.divide 2.0).to eq 0.0
 	end
 
 	it "will make result zero on cancel" do
 		calculator = Calculator.new
 		calculator.cancel
-		expect(calculator.result).to eq 0
+		expect(calculator.result).to eq 0.0
 	end
 end
 
