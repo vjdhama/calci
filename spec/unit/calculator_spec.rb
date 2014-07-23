@@ -1,7 +1,6 @@
 require 'spec_helper'
 require "calculator.rb"
 
-
 describe "Calculator" do
 
 	it "will add a number" do
@@ -34,8 +33,9 @@ end
 describe "CommandProcessor" do
   it "will exit on input exit" do
     cmd = CommandProcessor.new
-    cmd.stub(:gets) {"exit\n"}
-    expect { cmd.parser }.to raise_error SystemExit
+    cmd.stub(:getInput).and_return("add 3\n")
+    cmd.parser
+    expect(cmd.calculator.result).to eq 3
   end
 end
 

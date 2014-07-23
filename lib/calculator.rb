@@ -31,10 +31,15 @@ class CommandProcessor
 	attr_accessor :input
 	attr_accessor :operation
 	attr_accessor :calculator
+
+	def getInput
+		gets.to_s.chomp
+	end
+	
 	def parser
 		calculator = Calculator.new
 		while true
-			input = gets.to_s.chomp
+			input = getInput
 			operation = input.split(' ')[0]
 			param = input.split(' ')[1]
 			if operation.eql? 'exit'
@@ -55,7 +60,7 @@ class CommandProcessor
 				calculator.cancel
 				puts calculator.result
 			else
-				puts "Invalid Operation"
+				puts "invalid op"
 			end
 		end
 	end
