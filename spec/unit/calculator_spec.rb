@@ -30,3 +30,12 @@ describe "Calculator" do
 		expect(calculator.result).to eq 0
 	end
 end
+
+describe "CommandProcessor" do
+  it "will exit on input exit" do
+    cmd = CommandProcessor.new
+    cmd.stub(:gets) {"exit\n"}
+    expect { cmd.parser }.to raise_error SystemExit
+  end
+end
+
